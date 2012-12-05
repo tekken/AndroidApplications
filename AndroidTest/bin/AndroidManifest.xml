@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Display" android:label="Display"></activity>
         <activity android:name=".Next" android:label="Address Details"></activity>
-    </application>
+	</application>
 
 </manifest>
