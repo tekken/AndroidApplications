@@ -1,4 +1,9 @@
-package com.example.androidtest;
+
+
+import com.example.androidtest.Person;
+import com.example.androidtest.R;
+import com.example.androidtest.R.id;
+import com.example.androidtest.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,6 +13,8 @@ public class Display extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.display);
+		
 		TextView name=(TextView)findViewById(R.id.textView1);
 		TextView street=(TextView)findViewById(R.id.textView2);
 		

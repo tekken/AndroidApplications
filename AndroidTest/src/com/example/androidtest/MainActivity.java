@@ -1,9 +1,8 @@
 package com.example.androidtest;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -27,6 +26,7 @@ public class MainActivity extends Activity {
 				person_details.setName(name.getText().toString());
 				person_details.setEmail(email.getText().toString());
 				person_details.setContact(contact.getText().toString());
+				
 				Intent intent=new Intent(MainActivity.this, Next.class);
 				intent.putExtra("person_details", person_details);
 				startActivity(intent);

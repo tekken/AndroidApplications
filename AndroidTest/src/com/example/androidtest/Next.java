@@ -13,7 +13,7 @@ public class Next extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.next);		
+		setContentView(R.layout.next);
 		final Person person=(Person)getIntent().getParcelableExtra("person_details");
 		final EditText et_street=(EditText)findViewById(R.id.street);
 		final EditText et_city=(EditText)findViewById(R.id.city);
@@ -39,4 +39,3 @@ public class Next extends Activity {
 		});
 	}
 }
-
