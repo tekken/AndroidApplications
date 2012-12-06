@@ -1,7 +1,5 @@
 package com.example.dynamicedittextviews;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,11 +24,13 @@ public class MainActivity extends Activity {
 		main = new LinearLayout(this);
 	    main.setOrientation(LinearLayout.VERTICAL);
 
-	    Button addButton = new Button(this);
-	    addButton.setText("add");
+	    
+	    Button addButton =new Button(this);
+	    addButton.setText("Add Button");
+	    addButton.setWidth(100);
         addButton.setLayoutParams(new LayoutParams(
         			LinearLayout.LayoutParams.WRAP_CONTENT,
-        			LinearLayout.LayoutParams.WRAP_CONTENT));
+        			LinearLayout.LayoutParams.WRAP_CONTENT));;
 	    addButton.setOnClickListener(new OnClickListener() {
 	        @Override
 	        public void onClick(View arg0) {
@@ -42,24 +42,30 @@ public class MainActivity extends Activity {
 	    setContentView(main);
 	}
     private void addEditText() {
-        LinearLayout editTextLayout = new LinearLayout(this);
-        editTextLayout.setOrientation(LinearLayout.HORIZONTAL);
-        main.addView(editTextLayout);
-
+    	LinearLayout container=new LinearLayout(MainActivity.this);
+        container.setLayoutParams(new LayoutParams(
+    			LinearLayout.LayoutParams.FILL_PARENT,
+    			LinearLayout.LayoutParams.FILL_PARENT));
+    	container.setOrientation(LinearLayout.HORIZONTAL);
+    	
+    	
         EditText editText = new EditText(this);
         editText.setId(id++);
+        editText.setWidth(200);
         editText.setLayoutParams(new LayoutParams(
         			LinearLayout.LayoutParams.WRAP_CONTENT,
         			LinearLayout.LayoutParams.WRAP_CONTENT));
         
         TextView textview= new TextView(this);
         textview.setId(tvid++);
+        textview.setWidth(200);
+        textview.setText("custom");
         textview.setLayoutParams(new LayoutParams(
         			LinearLayout.LayoutParams.WRAP_CONTENT,
         			LinearLayout.LayoutParams.WRAP_CONTENT));
         
-        editTextLayout.addView(textview);
-        editTextLayout.addView(editText);
+        main.addView(textview);
+        main.addView(editText);
     }	    
 
 }
