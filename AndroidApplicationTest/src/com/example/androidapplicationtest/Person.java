@@ -73,4 +73,12 @@ public class Person implements Parcelable{
 	public Address getAddress() {
 		return address;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getContact() {
+		return contact;
+	}
 }
