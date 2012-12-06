@@ -70,7 +70,7 @@
         android:layout_alignLeft="@+id/pincode"
         android:layout_below="@+id/pincode"
         android:layout_marginTop="26dp"
-        android:text="Save"
+        android:text="Next"
         android:width="100dp" />
 
 </RelativeLayout>
