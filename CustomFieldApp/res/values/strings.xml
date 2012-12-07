@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CustomFieldApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string-array name="optionList">
+        <item >India</item>
+        <item >Australia</item>
+        <item >China</item>
+        <item >Indonasia</item>
+        <item >Zurich</item>
+        <item >Custom</item>
+    </string-array>
+
+</resources>
