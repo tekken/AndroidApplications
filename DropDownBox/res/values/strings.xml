@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DropDownBox</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="option0">India</string>
+    <string name="option1">Australia</string>
+    <string name="option2">Canada</string>
+    <string name="default_text">Select an alternative:</string>
+
+</resources>

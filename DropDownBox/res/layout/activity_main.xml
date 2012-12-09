@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/drop_down_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/default_text" 
+        android:background="@drawable/dropdown_background"
+        android:drawableRight="@drawable/icn_dropdown_open"
+        android:padding="10dp"
+        />
+    
+    <LinearLayout android:id="@+id/dropdown_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="2dp"
+        android:background="@drawable/dropdown_background"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:visibility="gone"
+        >
+     <TextView
+        android:id="@+id/option0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option0" 
+        android:padding="10dp"
+        />
+     <View android:layout_width="fill_parent"
+        android:layout_height="2dp" 
+        android:padding="10dp" 
+        android:background="@color/light_grey"
+         />
+     
+     <TextView
+        android:id="@+id/option1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option1" 
+        android:padding="10dp"
+        />
+     <View android:layout_width="fill_parent"
+        android:layout_height="2dp" 
+        android:padding="10dp" 
+        android:background="@color/light_grey"
+         />
+     
+	 <TextView
+        android:id="@+id/option2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option2" 
+        android:padding="10dp"
+        />
+    </LinearLayout>
+
+</LinearLayout>
