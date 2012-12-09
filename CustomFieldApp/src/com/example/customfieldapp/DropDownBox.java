@@ -23,7 +23,8 @@ import android.widget.TextView;
 public class DropDownBox implements OnClickListener,AnimationListener {
 	private static final int _NUMBER_OF_OPTIONS = 4;
 	
-	static int id=_NUMBER_OF_OPTIONS; 
+	static int counter=_NUMBER_OF_OPTIONS; 
+	private int id=0;
 	private TextView drop_down_text;
 	private LinearLayout flyout_menu; 
 	private Activity activity;
@@ -32,10 +33,10 @@ public class DropDownBox implements OnClickListener,AnimationListener {
 	
 	@SuppressWarnings("deprecation")
 	public DropDownBox(Activity mainActivity, String[] itemList) {
-		id++;
+		counter++;
 		activity=mainActivity;
-		
 		drop_down_text=new TextView(activity);
+		id=counter;
 		drop_down_text.setId(id);
 		drop_down_text.setWidth(160);
 		drop_down_text.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.dropdown_background));
