@@ -2,11 +2,13 @@ package com.example.customfieldapp;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.ScaleAnimation;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,23 +21,29 @@ import android.widget.TextView;
  */
 
 public class DropDownBox implements OnClickListener,AnimationListener {
-	LinearLayout container;
+	private static final int _NUMBER_OF_OPTIONS = 4;
+	
+	static int id=_NUMBER_OF_OPTIONS; 
 	private TextView drop_down_text;
 	private LinearLayout flyout_menu; 
 	private Activity activity;
-	private TextView[] optionList=new TextView[4];
+	private TextView[] optionList=new TextView[_NUMBER_OF_OPTIONS];
+	private LinearLayout dropDown;
 	
-	public DropDownBox(Activity mainActivity) {
+	@SuppressWarnings("deprecation")
+	public DropDownBox(Activity mainActivity, String[] itemList) {
+		id++;
 		activity=mainActivity;
-		container=(LinearLayout)activity.findViewById(R.id.container);
+		
 		drop_down_text=new TextView(activity);
-		drop_down_text.setId(R.string.drop_down_text);
+		drop_down_text.setId(id);
+		drop_down_text.setWidth(160);
 		drop_down_text.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.dropdown_background));
 		drop_down_text.setText("Select an option :");
 		drop_down_text.setPadding(10, 10, 10, 10);
 		drop_down_text.setOnClickListener(this);
 		drop_down_text.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.icn_dropdown_open, 0);
-		container.addView(drop_down_text);
+
 		
 		flyout_menu=new LinearLayout(activity);
 		flyout_menu.setId(R.string.dropdown_menu);
@@ -45,13 +53,19 @@ public class DropDownBox implements OnClickListener,AnimationListener {
 		flyout_menu.setOrientation(LinearLayout.VERTICAL);
 		flyout_menu.setPadding(10, 10, 10, 10);
 		flyout_menu.setVisibility(View.GONE);
-		container.addView(flyout_menu);
 		
-		//Create 3 options
-		optionList[0]=createOption(1,"India");
-		optionList[1]=createOption(2,"Australia");
-		optionList[2]=createOption(3,"Canada");
-		optionList[3]=createOption(4,"Custom");
+		dropDown=new LinearLayout(activity);
+		dropDown.setOrientation(LinearLayout.VERTICAL);
+		dropDown.addView(drop_down_text);
+		dropDown.addView(flyout_menu);
+		
+		for (int i = 0; i < _NUMBER_OF_OPTIONS; i++) {
+			optionList[i]=createOption(i, itemList[i]);
+		}
+	}
+
+	public LinearLayout getDropDown() {
+		return dropDown;
 	}
 
 	private TextView createOption(int id,String item) {
@@ -62,10 +76,6 @@ public class DropDownBox implements OnClickListener,AnimationListener {
 		option.setOnClickListener(this);
 		flyout_menu.addView(option);
 		return option;
-	}
-
-	public LinearLayout getContainer() {
-		return container;
 	}
 
 	/**
@@ -121,7 +131,22 @@ public class DropDownBox implements OnClickListener,AnimationListener {
 			//display alert
 			Builder alert=new Builder(activity);
 			alert.setTitle("Create Custom Field");
-			alert.setMessage("Hello");
+			final EditText et=new EditText(activity);
+			alert.setView(et);
+			
+			alert.setPositiveButton("Create", new android.app.AlertDialog.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+				TextView v=(TextView)activity.findViewById(id);
+				if(v!=null) v.setText(et.getText());
+				}
+			});
+			alert.setNegativeButton("Cancel", new android.app.AlertDialog.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					
+				}
+			});
 			alert.show();
 		}
 	}
