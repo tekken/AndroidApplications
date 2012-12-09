@@ -24,7 +24,7 @@ public class DropDownBox implements OnClickListener,AnimationListener {
 	private Activity activity;
 	
 	public DropDownBox(Activity mainActivity) {
-		activity=mainActivity;
+		activity=mainActivity;		
 		drop_down_text=(TextView)activity.findViewById(R.id.drop_down_text);
 		flyout_menu=(LinearLayout)activity.findViewById(R.id.dropdown_menu);
 		
