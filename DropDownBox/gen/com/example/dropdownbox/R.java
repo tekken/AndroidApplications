@@ -21,12 +21,13 @@ public final class R {
         public static final int icn_dropdown_open=0x7f020002;
     }
     public static final class id {
-        public static final int drop_down_text=0x7f090000;
-        public static final int dropdown_menu=0x7f090001;
-        public static final int menu_settings=0x7f090005;
-        public static final int option0=0x7f090002;
-        public static final int option1=0x7f090003;
-        public static final int option2=0x7f090004;
+        public static final int container=0x7f090000;
+        public static final int drop_down_text=0x7f090001;
+        public static final int dropdown_menu=0x7f090002;
+        public static final int menu_settings=0x7f090006;
+        public static final int option0=0x7f090003;
+        public static final int option1=0x7f090004;
+        public static final int option2=0x7f090005;
     }
     public static final class integer {
         /**  determin how long it takes for the dropdown to animate in/out 

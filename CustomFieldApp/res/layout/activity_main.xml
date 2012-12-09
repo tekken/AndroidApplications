@@ -60,24 +60,24 @@
 
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="500dp"
-            android:height="40dp"
-            android:minHeight="40dp"
-            android:minWidth="40dp"
-            android:text="+"
-            android:onClick="addFieldPrompt"
-            android:width="40dp" />
-
+            android:onClick="addFieldPrompt"/>
     </RelativeLayout>
+
      <LinearLayout
          android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:orientation="vertical">
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical" >
+
 	 </LinearLayout>
+
+     <Button
+         android:id="@+id/button1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:onClick="display"
+         android:text="@string/hello_world" />
 
 </LinearLayout>

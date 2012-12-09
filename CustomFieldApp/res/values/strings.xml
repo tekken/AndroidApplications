@@ -12,5 +12,9 @@
         <item >Zurich</item>
         <item >Custom</item>
     </string-array>
-
+    <string name="drop_down_text">drop_down_text</string>
+    <string name="dropdown_menu">dropdown_menu</string>
+    <color name="light_grey">#CFCFCF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="one">#FCBBCC</color>
 </resources>

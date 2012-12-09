@@ -28,8 +28,15 @@ public class MainActivity extends Activity implements OnClickListener,OnItemSele
 		setContentView(R.layout.activity_main);
 	}
 	
+	public void display(View view){
+		new DropDownBox(this);
+
+//		TextView tv=(TextView)findViewById(R.string.drop_down_text);
+//		Toast msg=Toast.makeText(this, tv.getText().toString(), Toast.LENGTH_LONG);
+//		msg.setGravity(Gravity.CENTER, 0, 0);
+//		msg.show();
+	} 
 	public void addFieldPrompt(View view){
-		
 		Builder alert=new Builder(this);
 		alert.setTitle("Create Custom Field");
 		con=new LinearLayout(this);
